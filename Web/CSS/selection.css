@@ -40,6 +40,10 @@ body{
     padding:15px 21px;
     cursor:pointer;
 }
+#container-landing .list-entrance button:hover{
+    filter:brightness(0.9);
+    transition:filter 250ms;
+}
 #container-landing .list-entrance button svg{
     position: relative;
     left:2px;
