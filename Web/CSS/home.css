@@ -42,6 +42,10 @@
     padding:15px 21px;
     cursor:pointer;
 }
+#container-landing .list-entrance button:hover{
+    filter:brightness(0.9);
+    transition:filter 250ms;
+}
 #container-landing .list-entrance button svg{
     position: relative;
     left:2px;
@@ -263,7 +267,6 @@
 .warnings-container .rooftop-footer form .email-block{
     padding:10px 15px;
     width:65%;
-    border-bottom: 2px solid #39A55E;
 }
 .warnings-container .rooftop-footer form input{
     padding-left:10px;
@@ -302,4 +305,8 @@
     align-items: center;
     color:#fff;
     font-size:14px;
+}
+.warnings-container .rooftop-footer form .email-block input:focus{
+    border-bottom:2px solid #39A55E;
+    transition:all 100ms ease-in-out;
 }
