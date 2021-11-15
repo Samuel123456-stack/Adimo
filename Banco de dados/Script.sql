@@ -6,18 +6,9 @@ FLUSH PRIVILEGES;
 
 USE adimo;
 
-CREATE TABLE usuario (
-    idusu Integer AUTO_INCREMENT PRIMARY KEY,
-    email varchar(50) null,
-    confirma_email varchar(50) null,
-    senha varchar(8) null,
-    confirma_senha varchar(8) null,
-    perfil varchar(30) null
-);
-
 CREATE TABLE newsletter (
     idnew Integer AUTO_INCREMENT PRIMARY KEY,
-    email varchar(50)
+    email varchar(50) null
 );
 
 CREATE TABLE cidade (
@@ -36,8 +27,6 @@ CREATE TABLE bairro (
     fk_cid_bai Integer null,
 	FOREIGN KEY (fk_cid_bai) REFERENCES cidade (idcid)
 );
-
-
 
 insert into bairro(nome,fk_cid_bai)values
 ("Itapegica", (SELECT c.idcid FROM cidade c WHERE c.nome = "Guarulhos")),
@@ -273,94 +262,72 @@ insert into bairro(nome,fk_cid_bai)values
 CREATE TABLE proprietario (
     idprop Integer AUTO_INCREMENT PRIMARY KEY,
     nome varchar(50) null,
-    dt_nascimento date null,
     cpf varchar(14) null,
-    rg varchar(12) null,
+    rg varchar(13) null,
     email varchar(50) null,
     celular varchar(15) null
 );
 
-CREATE TABLE cliente (
-    idcli Integer AUTO_INCREMENT PRIMARY KEY,
-    nome varchar(50) null,
-    dtnascimento Date null,
-    cpf varchar(14) null,
-    rg varchar(12) null,
-    celular varchar(15) null
-);
-
-CREATE TABLE Mensagem (
-    idmen Integer AUTO_INCREMENT PRIMARY KEY,
-    mensagem varchar(30) null
-);
-
-CREATE TABLE agenda_visitas (
-    fk_imovel_id_imo Integer,
-    fk_cliente_id_cli Integer,
-    id_agen Integer PRIMARY KEY,
-    dt_vsita Date
-);
-
-CREATE TABLE serasa (
-    idser Integer AUTO_INCREMENT PRIMARY KEY,
-    situacao varchar(9)
-);
-
 CREATE TABLE imobiliaria (
     idimob Integer AUTO_INCREMENT PRIMARY KEY,
-    nome varchar(50),
-    cofeci varchar(10),
-    logradouro varchar(50),
-    numero Integer,
-    bairro varchar(50),
-    cidade varchar(50),
-    cep varchar(9)
+    nome varchar(50) null,
+    cofeci varchar(10) null,
+    logradouro varchar(50) null,
+    numero Integer null,
+    cep varchar(9) null,
+    fk_bai_imob integer null,
+	FOREIGN KEY (fk_bai_imob) REFERENCES bairro (idbai)
 );
+
+CREATE TABLE funcionario (
+    idfunc Integer AUTO_INCREMENT PRIMARY KEY,
+    nome varchar(30) null,
+    email varchar(50) null,
+    senha varchar(8) null,
+    fk_imob_fun integer null,    
+    FOREIGN KEY (fk_imob_fun) REFERENCES imobiliaria (idimob)
+);
+
+CREATE TABLE conveniencia (
+    idconv Integer AUTO_INCREMENT PRIMARY KEY,
+    nome varchar(50) null
+);
+
+insert into conveniencia(nome)values
+	('Academia'),('Quadras esportivas'),
+    ('Próximo de mercados'),
+    ('Próximo de farmácias'),
+    ('Piscina'), ('Ciclovias');   
 
 CREATE TABLE imovel (
     idimov Integer AUTO_INCREMENT PRIMARY KEY,
-    foto longblob null,
-    logradouro varchar(50),
-    numero Integer,
-    complemento varchar(30),
-    metragem integer,
-    qtecomodos integer,
-    qtevaga integer,
-    descricao varchar(100),
-    sobrelocalizacao varchar(100),
-    fk_imob_imov Integer,
-    fk_prop_imov Integer,
-    fk_bai_imov Integer,
+    logradouro varchar(50) null,
+    numero Integer null,
+    complemento varchar(30) null,
+    cep varchar(9) null,
+    tamanho integer null,
+    qtecomodos integer null,
+    qtevaga integer null,
+    descricao varchar(100) null,
+    sobrelocalizacao varchar(100) null,
+    fk_imob_imov Integer null,
+    fk_prop_imov Integer null,
+    fk_bai_imov Integer null,
     FOREIGN KEY (fk_imob_imov) REFERENCES imobiliaria (idimob),
     FOREIGN KEY (fk_prop_imov) REFERENCES proprietario (idprop),
     FOREIGN KEY (fk_bai_imov) REFERENCES bairro (idbai)
 );
 
+CREATE TABLE lista_conveniencias (
+    fk_conv_lista integer null,
+    fk_imob_lista integer null,
+	FOREIGN KEY (fk_conv_lista) REFERENCES conveniencia (idconv),
+    FOREIGN KEY (fk_imob_lista) REFERENCES imovel (idimov)
+);
 
 CREATE TABLE inquilino (
     idqui Integer AUTO_INCREMENT PRIMARY KEY,
-    nome varchar(50),
-    fk_imov_iqui Integer,
+    nome varchar(50) null,
+    fk_imov_iqui Integer null,
     FOREIGN KEY (fk_imov_iqui) REFERENCES imovel (idimov)
-);
-
-CREATE TABLE list_consulta_serasa(
-    fk_ser_lis Integer,
-    fk_imob_lis Integer,
-    fk_cli_lis Integer,
-    fk_men_lis Integer,
-	FOREIGN KEY (fk_ser_lis) REFERENCES serasa (idser),
-    FOREIGN KEY (fk_imob_lis) REFERENCES imobiliaria (idimob),
-	FOREIGN KEY (fk_cli_lis) REFERENCES cliente (idcli),
-    FOREIGN KEY (fk_men_lis) REFERENCES mensagem (idmen)
-);
-
-
-CREATE TABLE funcionario (
-    idfunc Integer AUTO_INCREMENT PRIMARY KEY,
-    nome varchar(30),
-    fk_usu_fun Integer,
-    fk_imob_fun Integer,
-    FOREIGN KEY (fk_usu_fun) REFERENCES usuario (idusu),
-    FOREIGN KEY (fk_imob_fun) REFERENCES imobiliaria (idimob)
 );
