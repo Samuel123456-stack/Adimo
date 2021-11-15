@@ -1,0 +1,158 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+    outline: 0;
+    border:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    height:200vh;
+}
+#container-landing{
+    max-width: 1080px;
+    margin:auto;
+}
+#container-landing .header-home{
+    padding:50px 0;
+}
+#container-landing .header-home .bar-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#container-landing ul li{
+    display: inline-flex;
+    padding-right:40px;
+    cursor:pointer;
+}
+#container-landing ul li svg{
+    margin-right:16px;
+}
+#container-landing .list-entrance button{
+    background: #39A55E;
+    border-radius: 60px;
+    color:#FFF;
+    font-size:16px;
+    padding:15px 21px;
+    cursor:pointer;
+}
+#container-landing .list-entrance button:hover{
+    filter:brightness(0.9);
+    transition:filter 250ms;
+}
+#container-landing .list-entrance button svg{
+    position: relative;
+    left:2px;
+    top:3px;
+}
+#container-landing .list-entrance button span:first-child{
+   background-color:#68CD8B;
+   border-radius:50%;
+   padding:4px;
+   margin-right:11px;
+}
+#container-landing .inline-block-container{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+#container-landing .inline-block-container .about h4{
+    color:#303030;
+}
+#container-landing .inline-block-container .about{
+    margin-left:40px;
+    background: rgba(104, 205, 139, 0.14);
+    border-radius: 12px;
+    padding:47px 20px;
+}
+#container-landing .code_customer{
+    border-bottom:2px solid rgba(104, 205, 139, 0.21);
+}
+#container-landing .code_customer p:first-child{
+    margin-bottom:19px;
+    font-size:18px;
+}
+#container-landing .code_customer p:last-child{
+    font-size:12px;
+    color:#303030;
+    padding-bottom:19px;
+    width:300px;
+}
+#container-landing .footer_rent{
+    margin-top:69px;
+}
+#container-landing .footer_rent h4{
+    margin-bottom:5px;
+}
+#container-landing .space{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:48px;
+}
+#container-landing .footer_rent p{
+    font-size:14px;
+    opacity: 0.5;
+}
+#container-landing .footer_rent .space span{
+    font-size:18px;
+    color:#303030;
+    font-weight: 600;
+}
+#container-landing .save button{
+    background: #39A55E;
+    border-radius: 6px;
+    padding:15px 38px;
+    margin-right:23.03px;
+    cursor:pointer;
+}
+#container-landing .save button span{
+    font-size:18px;
+    color:#F7F7F7;
+}
+#container-landing .save button svg{
+    margin-right:12px;
+    position:relative;
+    top:4px;
+}
+#container-landing .save button:hover{
+    background: linear-gradient(270deg, #68CD8B -11.25%, rgba(104, 205, 139, 0) 107.75%), #39A55E;
+}
+#container-landing .last-container{
+    margin-top:40px;
+    width:640px;
+}
+#container-landing .last-container .description, .location{
+    border: 1px solid rgba(154, 154, 154, 0.43);
+    border-radius: 12px;
+    padding:39px 20px 26px 20px;
+}
+#container-landing .last-container p{
+    font-size:12px;
+    color:#303030;
+    opacity: 0.5;
+    margin-top:5px;
+    margin-bottom:30px;
+}
+#container-landing .last-container .icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#container-landing .last-container .icons span{
+    color:#303030;
+    font-size:13px;
+    position:relative;
+    bottom:5px;
+    margin-left:5px;
+}
+#container-landing .location{
+    margin-top:40px;
+}
