@@ -112,9 +112,9 @@
                             <section class="icon">
                                 <img src="/images/world.png" alt="world" />
                             </section>
-                            <select name="cidade" id="cidade" th:object="${cid}">
+                            <select name="cidade" id="cidade" th:object="${ulCid}">
                                 <option value="">Cidade</option>
-                                <option  th:each="cid : ${cidade}"
+                                <option  th:each="cid : ${cidades}"
                                 	th:value="${cid.idCid}"                             	
                                 	th:text="${cid.nome}"></option> 
                             </select>
@@ -246,6 +246,7 @@
                         <form th:action="@{/newslatter/cadastro/home}" method="POST" th:object="${news}">
                             <div class="email-block">
                                 <div class="icon">
+                                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Teste</span>
                                     <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_3:508)">
                                         <path d="M15.8333 0.708252H4.16667C3.062 0.709377 2.00296 1.08288 1.22185 1.74682C0.440735 2.41077 0.00132321 3.31096 0 4.24992L0 12.7499C0.00132321 13.6889 0.440735 14.5891 1.22185 15.253C2.00296 15.917 3.062 16.2905 4.16667 16.2916H15.8333C16.938 16.2905 17.997 15.917 18.7782 15.253C19.5593 14.5891 19.9987 13.6889 20 12.7499V4.24992C19.9987 3.31096 19.5593 2.41077 18.7782 1.74682C17.997 1.08288 16.938 0.709377 15.8333 0.708252ZM4.16667 2.12492H15.8333C16.3323 2.12575 16.8196 2.25349 17.2325 2.4917C17.6453 2.7299 17.9649 3.06767 18.15 3.46154L11.7683 8.88667C11.2987 9.28426 10.6628 9.5075 10 9.5075C9.33715 9.5075 8.70131 9.28426 8.23167 8.88667L1.85 3.46154C2.03512 3.06767 2.35468 2.7299 2.76754 2.4917C3.1804 2.25349 3.66768 2.12575 4.16667 2.12492ZM15.8333 14.8749H4.16667C3.50363 14.8749 2.86774 14.651 2.3989 14.2525C1.93006 13.854 1.66667 13.3135 1.66667 12.7499V5.31242L7.05333 9.88825C7.83552 10.5514 8.89521 10.9239 10 10.9239C11.1048 10.9239 12.1645 10.5514 12.9467 9.88825L18.3333 5.31242V12.7499C18.3333 13.3135 18.0699 13.854 17.6011 14.2525C17.1323 14.651 16.4964 14.8749 15.8333 14.8749Z" fill="#39A55E"/>
@@ -257,7 +258,7 @@
                                         </defs>
                                     </svg>    
                                 </div>
-								<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Teste</span>
+								
                                 <input type="email" name="email-text" th:field="*{email}" placeholder="Por exemplo, suporte@adimo.com.br">
                                 
                             </div>

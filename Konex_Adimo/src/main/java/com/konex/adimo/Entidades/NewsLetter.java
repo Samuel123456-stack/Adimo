@@ -23,7 +23,7 @@ public class NewsLetter implements Serializable{
 	private Integer idNew;
 	
 	@NotBlank
-	@Email
+	@Email(message = "Informe um e-mail válido!")
 	@Column(length = 50)
 	private String email;
 	
