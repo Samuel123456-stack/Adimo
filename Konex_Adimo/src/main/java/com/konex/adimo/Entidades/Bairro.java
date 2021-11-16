@@ -37,6 +37,10 @@ public class Bairro implements Serializable{
 		this.cidade = cidade;
 	}
 
+	public Bairro(String nome) {
+		this.nome = nome;
+	}
+
 	public Integer getIdBai() {
 		return idBai;
 	}

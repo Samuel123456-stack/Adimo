@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <title>Home</title>
@@ -8,6 +8,8 @@
     <meta name="keywords" content="HTML, CSS">
     <meta name="description" content="Adimo">
     <meta name="author" content="konex-group">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+    <script th:src="@{/js/selectedCidBai.js}"></script>
 
     <link rel="stylesheet" href="/css/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -101,14 +103,17 @@
             </article>
 
             <div class="form-container">
-                <form action="" method="">
+                <form th:action="@{/home/busca}">
                     <div class="input-block">
-                        <div class="city-select">
+                        <div class="city-select" >
                             <section class="icon">
                                 <img src="/images/world.png" alt="world" />
                             </section>
-                            <select name="city" id="subject">
-                                <option value="">Cidade</option> 
+                            <select id="cidade">
+                                <option value="">Cidade</option>
+                                <option th:each="cid : ${cidade}"
+                                	th:value="${cid.idCid}"                             	
+                                	th:text="${cid.nome}"></option> 
                             </select>
                         </div>
 
@@ -116,8 +121,8 @@
                             <section class="icon">
                                 <img src="/images/bairro.png" alt="bairro" />
                             </section>
-                            <select name="bairro" id="subject">
-                                <option value="">Selecione o bairro desejado</option>
+                            <select name="bairro" id="bairro">
+                                <option value="">Primeiro a cidade</option>
                             </select>
                         </div>
 
@@ -128,150 +133,23 @@
         </div>
 
         <main class="appartment-list">
-            <div class="first-list">
-                <section class="first-option">
+            <div class="first-list" th:if="${imovel != null}">
+                <section class="first-option" th:each="imo, stat: ${imovel}">
                     <div class="description content">  
                         <img src="/images/appartment-galia.png" alt="image">
-                        <h4>Rua Gália - Morumbi</h4>
+                        <h4 th:text="${imo.logradouro}"></h4>
                         <div class="info">
                             <div class="area">
                                 <img src="/images/area-icon.png" alt="area">
-                                <span>130 m2</span>
+                                <span th:text="${imo.tamanho}"></span>
                             </div>
                             <div class="room">
                                 <img src="/images/room-icon.png" alt="icon">
-                                <span>6 Cômodos</span>
+                                <span th:text="${imo.qteComodos}"></span>
                             </div>
                             <div class="spot">
                                 <img src="/images/car-icon.png" alt="icon">
-                                <span>1 vaga</span>
-                            </div>
-                        </div>
-
-                        <footer class="more-info">
-                            <button type="button">Mais informações</button>
-                        </footer>
-                    </div>
-                </section>
-
-                <section class="second-option">
-                    <div class="description content">  
-                        <img src="/images/appartment-alice.png" alt="image">
-                        <h4>Rua Alice Gonsalves - Morumbi</h4>
-                        <div class="info">
-                            <div class="area">
-                                <img src="/images/area-icon.png" alt="area">
-                                <span>90 m2</span>
-                            </div>
-                            <div class="room">
-                                <img src="/images/room-icon.png" alt="icon">
-                                <span>4 Cômodos</span>
-                            </div>
-                            <div class="spot">
-                                <img src="/images/car-icon.png" alt="icon">
-                                <span>1 vaga</span>
-                            </div>
-                        </div>
-
-                        <footer class="more-info">
-                            <button type="button">Mais informações</button>
-                        </footer>
-                    </div>
-                </section>
-
-                <section class="third-option">
-                    <div class="description content">  
-                        <img src="/images/appartment-attilio.png" alt="image">
-                        <h4>Rua Attilio Regulo Arena - Morumbi</h4>
-                        <div class="info">
-                            <div class="area">
-                                <img src="/images/area-icon.png" alt="area">
-                                <span>160 m2</span>
-                            </div>
-                            <div class="room">
-                                <img src="/images/room-icon.png" alt="icon">
-                                <span>8 Cômodos</span>
-                            </div>
-                            <div class="spot">
-                                <img src="/images/car-icon.png" alt="icon">
-                                <span>2 vaga</span>
-                            </div>
-                        </div>
-
-                        <footer class="more-info">
-                            <button type="button">Mais informações</button>
-                        </footer>
-                    </div>
-                </section>
-            </div>
-
-            <div class="second-list">
-                <section class="first-option">
-                    <div class="description content">  
-                        <img src="/images/galia2.png" alt="image">
-                        <h4>Rua Gália - Morumbi</h4>
-                        <div class="info">
-                            <div class="area">
-                                <img src="/images/area-icon.png" alt="area">
-                                <span>100 m2</span>
-                            </div>
-                            <div class="room">
-                                <img src="/images/room-icon.png" alt="icon">
-                                <span>5 Cômodos</span>
-                            </div>
-                            <div class="spot">
-                                <img src="/images/car-icon.png" alt="icon">
-                                <span>1 vaga</span>
-                            </div>
-                        </div>
-
-                        <footer class="more-info">
-                            <button type="button">Mais informações</button>
-                        </footer>
-                    </div>
-                </section>
-
-                <section class="second-option">
-                    <div class="description content">  
-                        <img src="/images/alice2.png" alt="image">
-                        <h4>Rua Alice Gonsalves - Morumbi</h4>
-                        <div class="info">
-                            <div class="area">
-                                <img src="/images/area-icon.png" alt="area">
-                                <span>90 m2</span>
-                            </div>
-                            <div class="room">
-                                <img src="/images/room-icon.png" alt="icon">
-                                <span>4 Cômodos</span>
-                            </div>
-                            <div class="spot">
-                                <img src="/images/car-icon.png" alt="icon">
-                                <span>1 vaga</span>
-                            </div>
-                        </div>
-
-                        <footer class="more-info">
-                            <button type="button">Mais informações</button>
-                        </footer>
-                    </div>
-                </section>
-
-                <section class="third-option">
-                    <div class="description content">  
-                        <img src="/images/appartment-aristeu.png" alt="image">
-                        <h4>Rua Aristeu Seixas- Morumbi</h4>
-                        <div class="info">
-                            <div class="area">
-                                <img src="/images/area-icon.png" alt="area">
-                                <span>115 m2</span>
-                            </div>
-                            <div class="room">
-                                <img src="/images/room-icon.png" alt="icon">
-                                <span>6 Cômodos</span>
-                            </div>
-                            <div class="spot">
-                                <img src="/images/car-icon.png" alt="icon">
-                                <span>1 vaga</span>
+                                <span th:text="${imo.qteVaga}"></span>
                             </div>
                         </div>
 
@@ -360,7 +238,7 @@
                     novidades é muito simples, basta digitar o seu email no campo abaixo.</p>
 
                     <div class="form-container">
-                        <form action="" method="">
+                        <form th:action="@{/newslatter/cadastro/home}" method="POST" th:object="${news}">
                             <div class="email-block">
                                 <div class="icon">
                                     <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -374,15 +252,15 @@
                                         </defs>
                                     </svg>    
                                 </div>
-
-                                <input type="email" name="email-text" placeholder="Por exemplo, suporte@adimo.com.br">
+								<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Teste</span>
+                                <input type="email" name="email-text" th:field="*{email}" placeholder="Por exemplo, suporte@adimo.com.br">
                             </div>
 
                             <div class="input-submit">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6.78395 14.5746L2.05816 9.82217C1.83202 9.59483 1.52536 9.46712 1.20561 9.46712C0.885857 9.46712 0.579195 9.59483 0.353062 9.82217C0.126996 10.0496 0 10.358 0 10.6795C0 11.0011 0.126996 11.3095 0.353062 11.5369L5.07886 16.2893C5.30282 16.5146 5.56873 16.6933 5.8614 16.8153C6.15407 16.9372 6.46776 17 6.78456 17C7.10135 17 7.41504 16.9372 7.70771 16.8153C8.00038 16.6933 8.26629 16.5146 8.49026 16.2893L19.6469 5.06975C19.873 4.84235 20 4.53396 20 4.2124C20 3.89085 19.873 3.58246 19.6469 3.35505C19.4208 3.12771 19.1141 3 18.7944 3C18.4746 3 18.168 3.12771 17.9418 3.35505L6.78395 14.5746Z" fill="#F7F7F7"/>
                                 </svg>
-                                <span>Quero receber</span>
+                                <button value="submit" id="btnEmail">Quero receber</button>
                             </div>
                         </form>
                     </div>

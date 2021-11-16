@@ -17,8 +17,8 @@ public class Imovel implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idmov")
-	private Integer idMov;
+	@Column(name = "idimov")
+	private Integer idImov;
 	
 	@Column(length = 50)
 	private String logradouro;
@@ -62,7 +62,7 @@ public class Imovel implements Serializable{
 	public Imovel(Integer idMov, String logradouro, Integer numero, String complemento, String cep, Integer tamanho,
 			Integer qteComodos, Integer qteVaga, String descricao, String sobreLocalizacao, Imobiliaria imobiliaria,
 			Proprietario proprietario, Bairro bairro) {
-		this.idMov = idMov;
+		this.idImov = idMov;
 		this.logradouro = logradouro;
 		this.numero = numero;
 		this.complemento = complemento;
@@ -78,11 +78,11 @@ public class Imovel implements Serializable{
 	}
 
 	public Integer getIdMov() {
-		return idMov;
+		return idImov;
 	}
 
 	public void setIdMov(Integer idMov) {
-		this.idMov = idMov;
+		this.idImov = idMov;
 	}
 
 	public String getLogradouro() {
@@ -183,7 +183,7 @@ public class Imovel implements Serializable{
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(idMov);
+		return Objects.hash(idImov);
 	}
 
 	@Override
@@ -195,6 +195,6 @@ public class Imovel implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Imovel other = (Imovel) obj;
-		return Objects.equals(idMov, other.idMov);
+		return Objects.equals(idImov, other.idImov);
 	}
 }

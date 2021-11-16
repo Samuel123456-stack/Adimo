@@ -30,6 +30,10 @@ public class Cidade implements Serializable{
 		this.idCid = idCid;
 		this.nome = nome;
 	}
+	
+	public Cidade(String nome) {
+		this.nome = nome;
+	}
 
 	public Integer getIdCid() {
 		return idCid;
