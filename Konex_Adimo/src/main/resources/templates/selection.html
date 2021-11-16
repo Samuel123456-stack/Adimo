@@ -99,9 +99,9 @@
                     <img src="/images/kitchen.png" alt="image" />
                 </section>
 
-                <article class="about">
+                <article class="about" th:if="${imovel != null}" th:each="imo, stat: ${imovel}">
                     <div class="code_customer">
-                        <p>Cód. 702</p>
+                        <p >Cód. 702</p>
 
                         <h4>Tenha um atendimento único</h4>
                         <p>Gostou da residência? Salve ou se preferir entre em contato.</p>

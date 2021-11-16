@@ -103,15 +103,15 @@
             </article>
 
             <div class="form-container">
-                <form th:action="@{/home/busca}">
+                <form th:action="@{/}">
                     <div class="input-block">
                         <div class="city-select" >
                             <section class="icon">
                                 <img src="/images/world.png" alt="world" />
                             </section>
-                            <select id="cidade">
-                                <option value="">Cidade</option>
-                                <option th:each="cid : ${cidade}"
+                            <select name="cidade" id="cidade" th:object="${cid}">
+                                <option value="" th:field="*{nome}" >Cidade</option>
+                                <option  th:each="cid : ${cidade}"
                                 	th:value="${cid.idCid}"                             	
                                 	th:text="${cid.nome}"></option> 
                             </select>
@@ -137,11 +137,11 @@
                 <section class="first-option" th:each="imo, stat: ${imovel}">
                     <div class="description content">  
                         <img src="/images/appartment-galia.png" alt="image">
-                        <h4 th:text="${imo.logradouro}"></h4>
+                        <h4 th:text="${imo.logradouro}"></h4> - Morumbi<h4></h4>
                         <div class="info">
                             <div class="area">
                                 <img src="/images/area-icon.png" alt="area">
-                                <span th:text="${imo.tamanho}"></span>
+                                <span th:text="${imo.tamanho}"></span><span> m2</span>
                             </div>
                             <div class="room">
                                 <img src="/images/room-icon.png" alt="icon">
@@ -154,7 +154,9 @@
                         </div>
 
                         <footer class="more-info">
-                            <button type="button">Mais informações</button>
+                            <a th:href="@{/imovel/detalhes/{id}(id=${imo.idImov})}">
+                            	<button type="button">Mais informações</button>
+                            </a>
                         </footer>
                     </div>
                 </section>
@@ -252,8 +254,9 @@
                                         </defs>
                                     </svg>    
                                 </div>
-								<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Teste</span>
+								
                                 <input type="email" name="email-text" th:field="*{email}" placeholder="Por exemplo, suporte@adimo.com.br">
+                                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Teste</span>
                             </div>
 
                             <div class="input-submit">

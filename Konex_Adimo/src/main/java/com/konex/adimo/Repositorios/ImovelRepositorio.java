@@ -11,6 +11,8 @@ import com.konex.adimo.Entidades.Imovel;
 @Repository
 public interface ImovelRepositorio extends JpaRepository<Imovel, Integer>{
 	
-	@Query(nativeQuery = true,value="select * from imovel where fk_bai_imov = :id")
+	@Query(nativeQuery = true,value="select * "
+			+ "from imovel "
+			+ "where fk_bai_imov = :id")
 	List<Imovel> buscaImovel(Integer id);
 }

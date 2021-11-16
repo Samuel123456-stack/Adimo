@@ -1,6 +1,7 @@
 package com.konex.adimo.Entidades;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -44,6 +45,9 @@ public class Imovel implements Serializable{
 	
 	@Column(name = "sobrelocalizacao", length = 100)
 	private String sobreLocalizacao;
+	
+	@Column(columnDefinition = "Decimal(7.2)")
+	private BigDecimal valor;
 	
 	@OneToOne
 	@JoinColumn(name = "fk_imob_imov")
