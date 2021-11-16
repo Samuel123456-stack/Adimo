@@ -320,13 +320,13 @@ CREATE TABLE imovel (
     FOREIGN KEY (fk_bai_imov) REFERENCES bairro (idbai)
 );
 
-insert into imovel(logradouro,numero,complemento,tamanho,qtecomodos,qtevaga,fk_bai_imov)values
-	('Rua Gália',458,'Casa',130,6,1,155),
-    ('Rua Alice Gonsalves',410,'Casa',90,4,1,155),
-    ('Rua Attillio Regulo Arena',300,'Casa',160,8,2,155),
-    ('Rua Gália',245,'Casa',100,5,1,155),
-    ('Rua Alice Gonsalves',415,'Casa',90,4,1,155),
-    ('Rua Aristeu Seixas',600,'Casa',115,6,1,155);
+insert into imovel(logradouro,numero,complemento,tamanho,qtecomodos,qtevaga,valor,fk_bai_imov)values
+	('Rua Gália',458,'Casa',130,6,1,4600.00,155),
+    ('Rua Alice Gonsalves',410,'Casa',90,4,1,4600.00,155),
+    ('Rua Attillio Regulo Arena',300,'Casa',160,8,2,4500.00,155),
+    ('Rua Gália',245,'Casa',100,5,1,4800.00,155),
+    ('Rua Alice Gonsalves',415,'Casa',90,4,1,4700.00,155),
+    ('Rua Aristeu Seixas',600,'Casa',115,6,1,4000.00,155);
 
 CREATE TABLE lista_conveniencias (
     fk_conv_lista integer null,
