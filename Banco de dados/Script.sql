@@ -311,6 +311,7 @@ CREATE TABLE imovel (
     qtevaga integer null,
     descricao varchar(100) null,
     sobrelocalizacao varchar(100) null,
+    valor decimal(7.2) null,
     fk_imob_imov Integer null,
     fk_prop_imov Integer null,
     fk_bai_imov Integer null,
