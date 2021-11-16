@@ -14,5 +14,10 @@ public interface ImovelRepositorio extends JpaRepository<Imovel, Integer>{
 	@Query(nativeQuery = true,value="select * "
 			+ "from imovel "
 			+ "where fk_bai_imov = :id")
-	List<Imovel> buscaImovel(Integer id);
+	List<Imovel> buscaImovelPorBairro(Integer id);
+	
+	@Query(nativeQuery = true,value="select * "
+			+ "from imovel "
+			+ "where idimov = :id")
+	Imovel buscaImovelPorId(Integer id);
 }

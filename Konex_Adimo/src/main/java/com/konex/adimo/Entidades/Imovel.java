@@ -63,10 +63,10 @@ public class Imovel implements Serializable{
 	
 	public Imovel() {}
 
-	public Imovel(Integer idMov, String logradouro, Integer numero, String complemento, String cep, Integer tamanho,
-			Integer qteComodos, Integer qteVaga, String descricao, String sobreLocalizacao, Imobiliaria imobiliaria,
-			Proprietario proprietario, Bairro bairro) {
-		this.idImov = idMov;
+	public Imovel(Integer idImov, String logradouro, Integer numero, String complemento, String cep, Integer tamanho,
+			Integer qteComodos, Integer qteVaga, String descricao, String sobreLocalizacao, BigDecimal valor,
+			Imobiliaria imobiliaria, Proprietario proprietario, Bairro bairro) {
+		this.idImov = idImov;
 		this.logradouro = logradouro;
 		this.numero = numero;
 		this.complemento = complemento;
@@ -76,17 +76,18 @@ public class Imovel implements Serializable{
 		this.qteVaga = qteVaga;
 		this.descricao = descricao;
 		this.sobreLocalizacao = sobreLocalizacao;
+		this.valor = valor;
 		this.imobiliaria = imobiliaria;
 		this.proprietario = proprietario;
 		this.bairro = bairro;
 	}
 
-	public Integer getIdMov() {
+	public Integer getIdImov() {
 		return idImov;
 	}
 
-	public void setIdMov(Integer idMov) {
-		this.idImov = idMov;
+	public void setIdImov(Integer idImov) {
+		this.idImov = idImov;
 	}
 
 	public String getLogradouro() {
@@ -159,6 +160,14 @@ public class Imovel implements Serializable{
 
 	public void setSobreLocalizacao(String sobreLocalizacao) {
 		this.sobreLocalizacao = sobreLocalizacao;
+	}
+
+	public BigDecimal getValor() {
+		return valor;
+	}
+
+	public void setValor(BigDecimal valor) {
+		this.valor = valor;
 	}
 
 	public Imobiliaria getImobiliaria() {

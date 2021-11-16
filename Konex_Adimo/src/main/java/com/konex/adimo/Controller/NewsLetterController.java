@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.konex.adimo.Entidades.Cidade;
 import com.konex.adimo.Entidades.NewsLetter;
 import com.konex.adimo.Repositorios.NewsLetterRepositorio;
 
@@ -18,12 +20,16 @@ public class NewsLetterController {
 	private NewsLetterRepositorio newRepo;
 	
 	@PostMapping("/newslatter/cadastro/home")
-	public String cadastroEmail(@Valid @ModelAttribute("news") NewsLetter news, BindingResult result) {
-	
+	public ModelAndView cadastroEmail(@Valid @ModelAttribute("news") NewsLetter news, BindingResult result) {
+		ModelAndView mv = new ModelAndView("home");
+		
 		if (result.hasErrors()) {
-			return "home";
+			mv.addObject("cid", new Cidade(""));
+			return mv;
 		}
-		newRepo.save(news);
-		return "redirect:/";
+		else {
+			newRepo.save(news);
+			return mv;
+		}
 	}
 }
