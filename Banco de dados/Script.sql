@@ -183,6 +183,7 @@ insert into bairro(nome,fk_cid_bai)values
 ("Limão", (SELECT c.idcid FROM cidade c WHERE c.nome = "São Paulo")),
 ("Limoeiro", (SELECT c.idcid FROM cidade c WHERE c.nome = "São Paulo")),
 ("Luz", (SELECT c.idcid FROM cidade c WHERE c.nome = "São Paulo")),
+("Morumbi", (SELECT c.idcid FROM cidade c WHERE c.nome = "São Paulo")),
 ("Núcleo do Engordador", (SELECT c.idcid FROM cidade c WHERE c.nome = "São Paulo")),
 ("Pacaembu", (SELECT c.idcid FROM cidade c WHERE c.nome = "São Paulo")),
 ("Paineiras do Morumbi", (SELECT c.idcid FROM cidade c WHERE c.nome = "São Paulo")),
@@ -317,6 +318,14 @@ CREATE TABLE imovel (
     FOREIGN KEY (fk_prop_imov) REFERENCES proprietario (idprop),
     FOREIGN KEY (fk_bai_imov) REFERENCES bairro (idbai)
 );
+
+insert into imovel(logradouro,numero,complemento,tamanho,qtecomodos,qtevaga,fk_bai_imov)values
+	('Rua Gália',458,'Casa',130,6,1,155),
+    ('Rua Alice Gonsalves',410,'Casa',90,4,1,155),
+    ('Rua Attillio Regulo Arena',300,'Casa',160,8,2,155),
+    ('Rua Gália',245,'Casa',100,5,1,155),
+    ('Rua Alice Gonsalves',415,'Casa',90,4,1,155),
+    ('Rua Aristeu Seixas',600,'Casa',115,6,1,155);
 
 CREATE TABLE lista_conveniencias (
     fk_conv_lista integer null,
