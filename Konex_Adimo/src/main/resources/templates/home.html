@@ -137,11 +137,10 @@
 
         <main class="appartment-list">
             <div class="first-list" th:if="${imovel != null}">
-                <section class="first-option" th:each="imo, stat: ${imovel}">
+                <section class="first-option" th:each="imo, stat: ${imovel}" >
                     <div class="description content">  
-                    <!--     <img src="/images/appartment-galia.png" alt="image"> -->
                     	<img th:src="${imo.foto}" alt="image">
-                        <h4 th:text="${imo.logradouro}"></h4> - Morumbi<h4></h4>
+                        <h4 th:text="${imo.logradouro + ' - ' + imo.bairro.nome}" ></h4>
                         <div class="info">
                             <div class="area">
                                 <img src="/images/area-icon.png" alt="area">

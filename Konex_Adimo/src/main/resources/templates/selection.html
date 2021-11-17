@@ -140,13 +140,12 @@
             </div>
         </main>
 
-        <div class="last-container">
+        <div class="last-container" th:each="imo, stat: ${imovel}">
             <div class="description">
                 <h3>Descrição</h3>
-                <p>Residência de alto padrão de arquitetura contemporânea, possui 2 quartos, 1 suite, 1 lavabo, sala de estar e de jantar. 
-                    Venha conferir este lindo imóvel, basta entrar em contato. </p>
+                <p th:text="${imo.descricao}"></p>
 
-                <div class="icons" th:each="imo, stat: ${imovel}">
+                <div class="icons" >
                     <section class="area" >
                         <img src="/images/area-icon.png" alt="area" />
                         <span th:text="${imo.tamanho}"></span><span> m2</span>
@@ -161,7 +160,7 @@
                     </section>
                     <section class="address">
                         <img src="/images/address.png" alt="address" />
-                        <span th:text="${imo.logradouro}"></span>
+                        <span th:text="${imo.logradouro + ' - ' + imo.bairro.nome}"></span>
                     </section>
                 </div>
             </div>

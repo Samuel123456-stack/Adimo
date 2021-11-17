@@ -21,7 +21,7 @@ public class Imovel implements Serializable{
 	@Column(name = "idimov")
 	private Integer idImov;
 	
-	@Column(length = 150)
+	@Column(length = 200)
 	private String foto;
 	
 	@Column(length = 50)
@@ -43,11 +43,8 @@ public class Imovel implements Serializable{
 	@Column(name = "qtevaga")
 	private Integer qteVaga;
 	
-	@Column(length = 100)
+	@Column(length = 200)
 	private String descricao;
-	
-	@Column(name = "sobrelocalizacao", length = 100)
-	private String sobreLocalizacao;
 	
 	@Column(columnDefinition = "Decimal(7.2)")
 	private BigDecimal valor;
@@ -67,7 +64,7 @@ public class Imovel implements Serializable{
 	public Imovel() {}
 
 	public Imovel(Integer idImov, String foto, String logradouro, Integer numero, String complemento, String cep, Integer tamanho,
-			Integer qteComodos, Integer qteVaga, String descricao, String sobreLocalizacao, BigDecimal valor,
+			Integer qteComodos, Integer qteVaga, String descricao, BigDecimal valor,
 			Imobiliaria imobiliaria, Proprietario proprietario, Bairro bairro) {
 		this.idImov = idImov;
 		this.foto = foto;
@@ -79,7 +76,6 @@ public class Imovel implements Serializable{
 		this.qteComodos = qteComodos;
 		this.qteVaga = qteVaga;
 		this.descricao = descricao;
-		this.sobreLocalizacao = sobreLocalizacao;
 		this.valor = valor;
 		this.imobiliaria = imobiliaria;
 		this.proprietario = proprietario;
@@ -164,14 +160,6 @@ public class Imovel implements Serializable{
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public String getSobreLocalizacao() {
-		return sobreLocalizacao;
-	}
-
-	public void setSobreLocalizacao(String sobreLocalizacao) {
-		this.sobreLocalizacao = sobreLocalizacao;
 	}
 
 	public BigDecimal getValor() {

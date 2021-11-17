@@ -36,7 +36,7 @@ public class ImovelController {
 	}
 	
 	@GetMapping("/imovel/add")
-	public ResponseEntity<Imovel> favoritoAdd(@RequestParam(required = false) Integer id) {
+	public ResponseEntity<Imovel> addFavorito(@RequestParam(required = false) Integer id) {
 
 		if (id != null) {
 			favoritos.add(imoRepo.buscaImovelPorId(id));

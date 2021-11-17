@@ -5,6 +5,9 @@ $(document).ready(function() {
 			$.ajax({
 				url: '/imovel/add',
 				data: { "id": id },
+				success:function() {
+					alert('Imóvel adicionado à lista de favoritos!');		
+				}	
 			});
 		}
 	});
