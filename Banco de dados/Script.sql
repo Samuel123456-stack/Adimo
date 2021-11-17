@@ -82,7 +82,7 @@ insert into conveniencia(nome)values
 
 CREATE TABLE imovel (
     idimov Integer AUTO_INCREMENT PRIMARY KEY,
-    foto varchar(50) null,
+    foto varchar(200) null,
     logradouro varchar(50) null,
     numero Integer null,
     complemento varchar(30) null,
@@ -91,7 +91,6 @@ CREATE TABLE imovel (
     qtecomodos integer null,
     qtevaga integer null,
     descricao varchar(100) null,
-    sobrelocalizacao varchar(100) null,
     valor decimal(7.2) null,
     fk_imob_imov Integer null,
     fk_prop_imov Integer null,
@@ -100,14 +99,14 @@ CREATE TABLE imovel (
     FOREIGN KEY (fk_prop_imov) REFERENCES proprietario (idprop),
     FOREIGN KEY (fk_bai_imov) REFERENCES bairro (idbai)
 );
-
-insert into imovel(logradouro,numero,complemento,tamanho,qtecomodos,qtevaga,valor,fk_bai_imov)values
-	('Rua Gália',458,'Casa',130,6,1,4600.00,1),
-    ('Rua Alice Gonsalves',410,'Casa',90,4,1,4600.00,1),
-    ('Rua Attillio Regulo Arena',300,'Casa',160,8,2,4500.00,1),
-    ('Rua Gália',245,'Casa',100,5,1,4800.00,1),
-    ('Rua Alice Gonsalves',415,'Casa',90,4,1,4700.00,1),
-    ('Rua Aristeu Seixas',600,'Casa',115,6,1,4000.00,1);
+ 
+insert into imovel(foto,logradouro,numero,complemento,tamanho,qtecomodos,qtevaga,valor,fk_bai_imov)values
+	('https://www.decorfacil.com/wp-content/uploads/2017/03/20171011fachada-casa-simples-pequena-99-960x600.jpg','Rua Gália',458,'Casa',130,6,1,4600.00,10),
+    ('https://www.imoveismartini.com.br/media/com_eshop/products/resized/image_5f74bd0cc688c_1-600x450.jpg','Rua Alice Gonsalves',410,'Casa',90,4,1,4600.00,10),
+    ('https://www.imoveismartini.com.br/media/com_eshop/products/resized/image_6005ccaed838f_2-600x450.jpg','Rua Attillio Regulo Arena',300,'Casa',160,8,2,4500.00,10),
+    ('https://fotos.vivadecora.com.br/decoracao-projeto-de-casa-casa-com-piscina-revistavd-173621-proportional-height_cover_medium.jpg','Rua Gália',245,'Casa',100,5,1,4800.00,10),
+    ('https://g3s8s9z8.rocketcdn.me/wp-content/uploads/2015/05/casa-grande-a-venda-em-jaua-bahia-1.jpg','Rua Alice Gonsalves',415,'Casa',90,4,1,4700.00,10),
+    ('https://i.pinimg.com/originals/c0/43/6b/c0436bed014705b70daad7022b9d7031.jpg','Rua Aristeu Seixas',600,'Casa',115,6,1,4000.00,10);
 
 CREATE TABLE lista_conveniencias (
     fk_conv_lista integer null,

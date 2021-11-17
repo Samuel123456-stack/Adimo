@@ -21,6 +21,9 @@ public class Imovel implements Serializable{
 	@Column(name = "idimov")
 	private Integer idImov;
 	
+	@Column(length = 150)
+	private String foto;
+	
 	@Column(length = 50)
 	private String logradouro;
 	
@@ -63,10 +66,11 @@ public class Imovel implements Serializable{
 	
 	public Imovel() {}
 
-	public Imovel(Integer idImov, String logradouro, Integer numero, String complemento, String cep, Integer tamanho,
+	public Imovel(Integer idImov, String foto, String logradouro, Integer numero, String complemento, String cep, Integer tamanho,
 			Integer qteComodos, Integer qteVaga, String descricao, String sobreLocalizacao, BigDecimal valor,
 			Imobiliaria imobiliaria, Proprietario proprietario, Bairro bairro) {
 		this.idImov = idImov;
+		this.foto = foto;
 		this.logradouro = logradouro;
 		this.numero = numero;
 		this.complemento = complemento;
@@ -84,6 +88,14 @@ public class Imovel implements Serializable{
 
 	public Integer getIdImov() {
 		return idImov;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	public void setIdImov(Integer idImov) {

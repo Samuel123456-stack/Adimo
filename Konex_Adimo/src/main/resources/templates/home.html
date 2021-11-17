@@ -110,7 +110,7 @@
                     <div class="input-block">
                         <div class="city-select" >
                             <section class="icon">
-                                <img src="/images/world.png" alt="world" />
+                             <img src="/images/world.png" alt="world" />
                             </section>
                             <select name="cidade" id="cidade" th:object="${ulCid}">
                                 <option value="">Cidade</option>
@@ -139,7 +139,8 @@
             <div class="first-list" th:if="${imovel != null}">
                 <section class="first-option" th:each="imo, stat: ${imovel}">
                     <div class="description content">  
-                        <img src="/images/appartment-galia.png" alt="image">
+                    <!--     <img src="/images/appartment-galia.png" alt="image"> -->
+                    	<img th:src="${imo.foto}" alt="image">
                         <h4 th:text="${imo.logradouro}"></h4> - Morumbi<h4></h4>
                         <div class="info">
                             <div class="area">
