@@ -3,7 +3,7 @@ $(document).ready(function() {
 		var id = $(this).val();
 				if (id > 0) {
 			$.ajax({
-				url: '/imovel/favoritos2',
+				url: '/imovel/add',
 				data: { "id": id },
 			});
 		}
