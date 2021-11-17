@@ -90,7 +90,7 @@ CREATE TABLE imovel (
     tamanho integer null,
     qtecomodos integer null,
     qtevaga integer null,
-    descricao varchar(100) null,
+    descricao varchar(200) null,
     valor decimal(7.2) null,
     fk_imob_imov Integer null,
     fk_prop_imov Integer null,
@@ -100,13 +100,13 @@ CREATE TABLE imovel (
     FOREIGN KEY (fk_bai_imov) REFERENCES bairro (idbai)
 );
  
-insert into imovel(foto,logradouro,numero,complemento,tamanho,qtecomodos,qtevaga,valor,fk_bai_imov)values
-	('https://www.decorfacil.com/wp-content/uploads/2017/03/20171011fachada-casa-simples-pequena-99-960x600.jpg','Rua Gália',458,'Casa',130,6,1,4600.00,10),
-    ('https://www.imoveismartini.com.br/media/com_eshop/products/resized/image_5f74bd0cc688c_1-600x450.jpg','Rua Alice Gonsalves',410,'Casa',90,4,1,4600.00,10),
-    ('https://www.imoveismartini.com.br/media/com_eshop/products/resized/image_6005ccaed838f_2-600x450.jpg','Rua Attillio Regulo Arena',300,'Casa',160,8,2,4500.00,10),
-    ('https://fotos.vivadecora.com.br/decoracao-projeto-de-casa-casa-com-piscina-revistavd-173621-proportional-height_cover_medium.jpg','Rua Gália',245,'Casa',100,5,1,4800.00,10),
-    ('https://g3s8s9z8.rocketcdn.me/wp-content/uploads/2015/05/casa-grande-a-venda-em-jaua-bahia-1.jpg','Rua Alice Gonsalves',415,'Casa',90,4,1,4700.00,10),
-    ('https://i.pinimg.com/originals/c0/43/6b/c0436bed014705b70daad7022b9d7031.jpg','Rua Aristeu Seixas',600,'Casa',115,6,1,4000.00,10);
+insert into imovel(foto,descricao,logradouro,numero,complemento,tamanho,qtecomodos,qtevaga,valor,fk_bai_imov)values
+	('https://www.decorfacil.com/wp-content/uploads/2017/03/20171011fachada-casa-simples-pequena-99-960x600.jpg','Residência de alto padrão de arquitetura contemporânea, possui 2 quartos, 1 suite, 1 lavabo, sala de estar e de jantar.Venha conferir este lindo imóvel, basta entrar em contato.','Rua Gália',458,'Casa',130,6,1,4600.00,10),
+    ('https://www.imoveismartini.com.br/media/com_eshop/products/resized/image_5f74bd0cc688c_1-600x450.jpg','Residência de alto padrão de arquitetura contemporânea, possui 2 quartos, 1 suite, 1 lavabo, sala de estar e de jantar.Venha conferir este lindo imóvel, basta entrar em contato.','Rua Alice Gonsalves',410,'Casa',90,4,1,4600.00,10),
+    ('https://www.imoveismartini.com.br/media/com_eshop/products/resized/image_6005ccaed838f_2-600x450.jpg','Residência de alto padrão de arquitetura contemporânea, possui 2 quartos, 1 suite, 1 lavabo, sala de estar e de jantar.Venha conferir este lindo imóvel, basta entrar em contato.','Rua Attillio Regulo Arena',300,'Casa',160,8,2,4500.00,10),
+    ('https://fotos.vivadecora.com.br/decoracao-projeto-de-casa-casa-com-piscina-revistavd-173621-proportional-height_cover_medium.jpg','Residência de alto padrão de arquitetura contemporânea, possui 2 quartos, 1 suite, 1 lavabo, sala de estar e de jantar.Venha conferir este lindo imóvel, basta entrar em contato.','Rua Gália',245,'Casa',100,5,1,4800.00,10),
+    ('https://g3s8s9z8.rocketcdn.me/wp-content/uploads/2015/05/casa-grande-a-venda-em-jaua-bahia-1.jpg','Residência de alto padrão de arquitetura contemporânea, possui 2 quartos, 1 suite, 1 lavabo, sala de estar e de jantar.Venha conferir este lindo imóvel, basta entrar em contato.','Rua Alice Gonsalves',415,'Casa',90,4,1,4700.00,10),
+    ('https://i.pinimg.com/originals/c0/43/6b/c0436bed014705b70daad7022b9d7031.jpg','Residência de alto padrão de arquitetura contemporânea, possui 2 quartos, 1 suite, 1 lavabo, sala de estar e de jantar.Venha conferir este lindo imóvel, basta entrar em contato.','Rua Aristeu Seixas',600,'Casa',115,6,1,4000.00,10);
 
 CREATE TABLE lista_conveniencias (
     fk_conv_lista integer null,
