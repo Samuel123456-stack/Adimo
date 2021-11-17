@@ -8,6 +8,7 @@
     <meta name="keywords" content="HTML, CSS">
     <meta name="description" content="Adimo">
     <meta name="author" content="konex-group">
+    <script th:src="@{/js/addFavorito.js}"></script>
 
     <link rel="stylesheet" href="/css/selection.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +18,8 @@
     <div id="container-landing" class="selection">
         <div class="header-home">
             <header class="bar-header">
-                <div class="logo">   
+                <div class="logo">
+                	<a th:href="@{/}">   
 	                    <svg width="165" height="40" viewBox="0 0 165 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 	                        <path
 	                            d="M56.4956 28.1643H46.4775L44.7562 33.0252H40.6594L49.2316 9.19979H53.7759L62.3481 33.0252H58.2169L56.4956 28.1643ZM55.394 24.9807L51.5038 13.9238L47.5791 24.9807H55.394Z"
@@ -40,7 +42,8 @@
 	                        <path fill-rule="evenodd" clip-rule="evenodd"
 	                            d="M32.7817 0H13.6061L7.75902 6.49051V19.6954L3.8147e-05 27.1488V40H32.7817V26.74L32.7817 19.7362L32.7817 0ZM27.7384 21.7876V35.0476H12.8024V21.7787L20.3479 14.5303L27.7384 21.7876ZM12.8024 14.8507L20.3869 7.56489L27.7384 14.7839V4.95238H15.8781L12.8024 8.36663V14.8507ZM7.75902 26.6234V35.0476H5.04338V29.2321L7.75902 26.6234Z"
 	                            fill="#39A55E" />
-	                    </svg>     
+	                    </svg>
+                	</a>     
                 </div>
 
                 <div class="list-entrance">
@@ -69,7 +72,7 @@
                                 </clipPath>
                                 </defs>
                             </svg>    
-                            <span>Favoritos</span>
+                            <a th:href="@{/imovel/favoritos}"><span>Favoritos</span></a>
                         </li>
 
                         <button type="button">
@@ -126,7 +129,9 @@
                                     </clipPath>
                                     </defs>
                                 </svg>
-                                <span>Salvar</span>
+                            <a th:href="@{/imovel/favoritos/{id}(id=${imo.idImov})}">
+                            	<span id="addFavorito" th:value="${imo.idImov}">Salvar</span>
+                            </a>
                             </button>
                             <img src="/images/call.png" alt="icon" />
                         </footer>
