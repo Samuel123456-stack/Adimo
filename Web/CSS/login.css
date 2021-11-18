@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+body{
+    margin: 0;
+}
+.todo{
+    width: 1080px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0 160px;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-image: url(/images/fundoLog.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    position: relative;
+}
+#linkIndex{
+    margin: 0 0 100px 0;
+    padding-top: 50px;
+    height: 40px;
+}
+.login{
+    width: 360px;
+    height: 563px;
+    padding: 37px 0 0 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 50px 5px rgba(57, 165, 94, 0.12);
+    border-radius: 10px;
+    right: 160px;
+    position: absolute;
+}
+.login h1{
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    font-size: 27px;
+    color: #303030;
+}
+.login h4{
+    width: 320px;
+    margin: 0 0 46px 0;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+}
+.email, .senha{
+    width: 300px;
+    height: 52px;
+    padding: 6px 0 0 20px;
+    background: #fff;
+    border-radius: 6px 6px 0px 0px;
+    border-bottom: 2px solid #68CD8B;
+}
+.email:hover, .senha:hover{
+    background: rgba(57, 165, 94, 0.09);
+}
+.email{
+    margin-bottom: 40px;
+}
+.senha{
+    margin-bottom: 50px;
+}
+.email svg, .senha svg{
+    margin: 16px 20px 0 0;
+    float: left;
+}
+.email p, .senha p{
+    margin: 0 0 4px 0;
+    font-size: 10px;
+    line-height: 15px;
+    color: #39A55E;
+}
+.email input[type="text"], .senha input[type="password"]{
+    width: 256px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+.option-check{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 7.33333px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all 0.15s ease-out 0s;
+    background: #fff;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+}
+.option-check {
+      height: 20px;
+      width: 20px;
+      border: 1.4px solid #39A55E;
+} 
+.option-check:checked {
+      background: #39A55E;
+      border: none;
+}
+.option-check:checked::before {
+    position: absolute;
+    content: '✔';
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    line-height: 21px;
+}
+.option-check:checked::before {
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+    line-height: 16px;
+}
+.option-check{
+    border-radius: 4px;
+}
+#check{
+    width: 145px;
+    float: left;
+    margin-right: 90px;
+}
+.login a{
+   text-decoration: none;
+   color: #39A55E;
+}
+#esqueci p{
+    font-size: 12px;
+    padding-top: 12px;
+    margin: 0;
+}
+.login button{
+    width: 320px;
+    height: 60px;
+    margin-top: 50px;
+    background: #39A55E;
+    border-radius: 6px;
+    border: none;
+    font-size: 18px;
+    color: #F7F7F7;
+    outline: none;
+}
+.login button svg{
+    margin: 0 20px 0 101px;
+    float: left;
+}
+.login button p{
+    margin: 2px 0 0 0;
+    float: left;
+}
+.barraLog{
+    width: 400px;
+    height: 9px;
+    background: #39A55E;
+    right: 160px;
+    bottom: 0;
+    position: absolute;
+}
+
+.login button:hover{
+    background: linear-gradient(270deg, #68CD8B -11.25%, rgba(104, 205, 139, 0) 107.75%), #39A55E;
+}
+.login button:focus{
+    border: 2px solid #39A55E;
+    background: #fff;
+    color: #39A55E;
+}
+.login button:focus path{
+    fill: #39A55E;
+}

@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+body{
+    margin: 0;
+}
+.menu{
+    width: 1080px;
+    height: 60px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+.menu a{
+    float: left;
+    text-decoration: none;
+}
+#linkIndex{
+    margin: 10px 625px 0 0;
+}
+.user{
+    width: 148px;
+    height: 28px;
+    padding: 16px;
+    background: #39A55E;
+    border-radius: 60px;
+}
+.user:hover{
+    background: linear-gradient(0deg, #68CD8B, #68CD8B), #39A55E;
+}
+.user img{
+    width: 28px;
+    height: 28px;
+    padding: 2px;
+    margin-right: 12px;
+    float: left;
+    background: #68CD8B;
+    border-radius: 50%;
+}
+.user p{
+    margin: 6px 5px;
+    float: left;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    color: #FFF;
+}
+#sair{
+    margin: 20px 0 20px 50px;
+}
+.todo{
+    width: 1080px;
+    height: 900px;
+    margin: 0 auto;
+    padding-top: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.esquerda, .direita{
+    float: left;
+}
+.esquerda{
+    margin-right: 40px;
+}
+.cadasImovel, .cadasCli{
+    width: 620px;
+    padding: 40px 0 0 20px;
+    background: #fff;
+    box-shadow: 0px 0px 50px 5px rgba(57, 165, 94, 0.15);
+    border-radius: 12px;
+}
+.cadasImovel{
+    height: 420px;
+    position: relative;
+}
+.cadasCli{
+    height: 300px;
+    margin-top: 40px;
+}
+.cadasImovel h1, .cadasCli h1{
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    font-size: 24px;
+    color: #303030;
+}
+
+.log, .bairro, .numero, .cep, .tamanho, .vagas, .comodos, .aluguel, .descricao, .nomeCli, .cpfCli, .rgCli, .emailCli, .contatoCli{
+    border: 1.4px solid #68CD8B;
+    border-radius: 6px;
+    padding: 10px 0 0 20px;
+    float: left;
+}
+.log svg, .bairro svg, .numero svg, .cep svg, .tamanho svg, .vagas svg, .comodos svg, .aluguel svg, .descricao svg, .nomeCli svg, .cpfCli svg, .rgCli svg, .emailCli svg, .contatoCli svg{
+    margin: 12px 14px 0 0;
+    float: left;
+}
+.log input, .bairro input, .numero input, .cep input, .tamanho input, .vagas input, .comodos input, .aluguel input, .descricao textarea, .nomeCli input, .cpfCli input, .rgCli input, .emailCli input, .contatoCli input{
+    float: left;
+    font-size: 13px;
+    border: none;
+    outline: none;
+}
+.log p, .bairro p, .numero p, .cep p, .tamanho p, .vagas p, .comodos p, .aluguel p, .descricao p, .nomeCli p, .cpfCli p, .rgCli p, .emailCli p, .contatoCli p{
+    height: 15px;
+    margin: 0;
+    float: left;
+    color: #39A55E;
+    font-size: 10px;
+}
+.log, .bairro, .numero, .cep, .tamanho, .vagas, .comodos, .aluguel, .nomeCli, .cpfCli, .rgCli, .emailCli, .contatoCli{
+    height: 50px;
+    margin-bottom: 20px;
+}
+.log, .numero, .cep, .tamanho, .comodos, .aluguel, .nomeCli, .rgCli, .contatoCli{
+    margin-right: 20px;
+}
+.numero, .comodos{
+    width: 98px;
+}
+.numero input, .comodos input{
+    width: 57px;
+    height: 20px;
+}
+.cep, .aluguel{
+    width: 129px;
+}
+.cep input, .aluguel input{
+    width: 90px;
+}
+.log{
+    width: 336px;
+}
+.log input{
+    width: 290px;
+}
+.bairro{
+    width: 175px;
+}
+.bairro input{
+    width: 130px;
+}
+.tamanho{
+    width: 116px;
+}
+.tamanho input{
+    width: 50px;
+}
+.vagas{
+    width: 82px;
+}
+.vagas input{
+    width: 40px;
+}
+.aluguel input{
+    width: 80px;
+}
+.aluguel p{
+    width: 100px;
+}
+.descricao{
+    width: 241px;
+    height: 82px;
+}
+.descricao textarea{
+    width: 200px;
+    height: 60px;
+    resize: none;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+}
+.tamanho h4, .aluguel h4{
+    margin: 0;
+    float: left;
+    font-size: 13px;
+    font-weight: normal;
+    color: #303030;
+}
+.itensImovel{
+    width: 240px;
+    margin: 0 0 0 20px;
+    position: absolute;
+    bottom: 31px;
+}
+.itensImovel h2{
+    margin: 0;
+    font-weight: 500;
+    font-size: 10px;
+    color: #39A55E;
+}
+.itensImovel label{
+    font-weight: 500;
+    font-size: 10px;
+    color: #303030;
+}
+.option-check{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 7.33333px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all 0.15s ease-out 0s;
+    background: #fff;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+}
+.option-check {
+      height: 15px;
+      width: 15px;
+      border: 1.4px solid #39A55E;
+} 
+.option-check:checked {
+      background: #39A55E;
+      border: none;
+}
+.option-check:checked::before {
+    position: absolute;
+    content: '✔';
+    display: inline-block;
+    font-size: 15px;
+    text-align: center;
+    line-height: 16px;
+}
+.option-check:checked::before {
+    height: 15px;
+    width: 15px;
+    font-size: 15px;
+    line-height: 16px;
+}
+.option-check{
+    border-radius: 4px;
+}
+.cadasImovel button, .cadasCli button{
+    height: 60px;
+    background: #39A55E;
+    border-radius: 6px;
+    float: left;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #F7F7F7;
+}
+.cadasImovel button{
+    width: 264px;
+    margin: 20px 0 0 312px;
+}
+.cadasImovel button:hover, .cadasCli button:hover, .imoAlugados input[type="submit"]:hover{
+    background: linear-gradient(270deg, #68CD8B -11.25%, rgba(104, 205, 139, 0) 107.75%), #39A55E;
+}
+.cadasImovel button:focus, .cadasCli button:focus, .imoAlugados input[type="submit"]:focus{
+    border: 2px solid #39A55E;
+    background: #fff;
+    color: #39A55E;
+}
+.cadasImovel button:focus path, .cadasCli button:focus path{
+    fill: #39A55E;
+}
+.cadasCli button{
+    width: 230px;
+}
+.nomeCli, .emailCli, .contatoCli{
+    width: 327px;
+}
+.nomeCli input, .emailCli input, .contatoCli input{
+    width: 276px;
+}
+.cpfCli, .rgCli{
+    width: 207px;
+}
+.cpfCli input, .rgCli input{
+    width: 170px;
+}
+.imoAlugados{
+    width: 380px;
+    height: 521px;
+    margin-bottom: 40px;
+    padding: 40px 0 0 20px;
+    background: #fff;
+    box-shadow: 0px 0px 50px 5px rgba(57, 165, 94, 0.15);
+    border-radius: 12px;
+}
+.imoAlugados h1{
+    margin: 0 0 38px 0;
+    font-weight: 600;
+    font-size: 24px;
+    color: #303030;
+}
+.imoAlugados table{
+    width: 360px;
+    border-collapse: collapse;
+}
+.imoAlugados  thead{
+    width: 350px;
+    height: 30px;
+    display: inline-block;
+}
+.imoAlugados tbody{
+    width: 350px;
+    height: 219px;
+    padding-right: 10px;
+    display: inline-block;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.imoAlugados td, .imoAlugados th{
+    height: 40px;
+    text-align: left;
+}
+.imoAlugados th{
+    color: #777;
+    font-size: 10px;
+}
+.imoAlugados td{
+    font-size: 15px;
+    color: #303030;
+    border-bottom: 1px solid rgb(190, 190, 190);
+}
+#imoTb{
+    width: 140px;
+}
+#alutb{
+    width: 132px;
+}
+#btnsTb{
+    width: 60px;
+    padding: none;
+}
+#btnsTb button{
+    width: 16px;
+    margin: 0 6px;
+    padding: 0;
+    border: none;
+    background: none;
+}
+/*scroll*/
+.imoAlugados tbody::-webkit-scrollbar {
+    width: 2px;
+}
+  
+/* Track */
+.imoAlugados tbody::-webkit-scrollbar-track {
+box-shadow: inset 0 0 5px #E8E8E8; 
+border-radius: 10px;
+}
+   
+/* Handle */
+.imoAlugados tbody::-webkit-scrollbar-thumb {
+background: #39A55E; 
+}
+  
+/* Handle on hover */
+.imoAlugados tbody::-webkit-scrollbar-thumb:hover {
+    background: #39A55E; 
+}
+/*fim scroll*/
+
+.cod{
+    width: 124px;
+    height: 35px;
+    margin: 38px 21px 20px 0;
+    padding: 15px 0 0 20px;
+    background: rgba(196, 196, 196, 0.73);
+    border-radius: 6px;
+    font-size: 14px;
+    color: #39A55E;
+    float: left;
+}
+.cod svg{
+    float: left;
+    margin: 0 10px 0 0;
+}
+.cod p{
+    margin: 2px 0 0 0;
+}
+.valAlu{
+    width: 170px;
+    height: 44px;
+    margin: 38px 0 20px 0;
+    padding: 4px 0 0 25px;
+    background: #EDF7F1;
+    border-radius: 6px 6px 0px 0px;
+    border-bottom: 2px solid #68CD8B;
+    float: left;
+}
+.valAlu svg{
+    margin: 11px 14px 0 0;
+    float: left;
+}
+.valAlu p{
+    margin: 0;
+    font-size: 10px;
+    color: #39A55E;
+}
+.valAlu input[type="text"]{
+    width: 133px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 13px;
+}
+.imoAlugados input[type="submit"]{
+    width: 360px;
+    height: 60px;
+    background: #39A55E;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    font-size: 18px;
+    color: #F7F7F7;
+}
+.consulCpf{
+    width: 360px;
+    height: 199px;
+    padding: 20px;
+    background: #39A55E;
+    border-radius: 12px;
+}
+.consulCpf h1{
+    margin: 0 0 38px 0;
+    font-weight: 600;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+.consulCpf input[type="submit"]{
+    width: 100px;
+    height: 50px;
+    margin-bottom: 34px;
+    background: #68CD8B;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+    float: left;
+}
+.consulCpf p{
+    font-weight: 600;
+    font-size: 13px;
+    color: #FFFFFF;
+}
+.cpf{
+    width: 215px;
+    height: 44px;
+    margin: 0 20px 34px 0;
+    padding: 4px 0 0 25px;
+    background: #EDF7F1;
+    border-radius: 6px 6px 0px 0px;
+    border-bottom: 2px solid #68CD8B;
+    float: left;
+}
+.cpf svg{
+    float: left;
+    margin: 11px 11px 0 0;
+}
+.cpf p{
+    margin: 0;
+    font-size: 10px;
+    color: #39A55E;
+}
+.cpf input[type="text"]{
+    width: 133px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 13px;
+}
