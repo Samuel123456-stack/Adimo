@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+body{
+    margin: 0;
+}
+.menu{
+    width: 1080px;
+    height: 60px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+.menu a{
+    float: left;
+    text-decoration: none;
+}
+#linkIndex{
+    margin: 5px 460px 0 0;
+}
+#home{
+    margin: 20px 40px 20px 0;
+}
+#favoritos{
+    margin: 20px 40px 20px 0;
+}
+.user{
+    width: 148px;
+    height: 28px;
+    padding: 16px;
+    background: #39A55E;
+    border-radius: 60px;
+}
+.user:hover{
+    background: linear-gradient(0deg, #68CD8B, #68CD8B), #39A55E;
+}
+.user img{
+    width: 28px;
+    height: 28px;
+    padding: 2px;
+    margin-right: 12px;
+    float: left;
+    background: #68CD8B;
+    border-radius: 50%;
+}
+.user p{
+    margin: 6px 5px;
+    float: left;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    color: #FFF;
+}
+.todo{
+    width: 1080px;
+    height: 770px;
+    margin: 0 auto;
+    padding-top: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.todo h1{
+    margin: 0;
+    font-weight: 600;
+    font-size: 27px;
+    line-height: 40px;
+    color: #39A55E;
+}
+.todo h4{
+    margin: 0 0 43px 0;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.5);
+}
+.todo hr{
+    border: 1px solid rgba(104, 205, 139, 0.15);
+    margin: 0;
+}
+.imovel{
+    height: 130px;
+    padding: 44px 0 0 0;
+    border-bottom: 2.3px solid rgba(104, 205, 139, 0.15);
+}
+.imovel img{
+    width: 100px;
+    height: 100px;
+    margin: 0 40px 0 0;
+    border-radius: 12px;
+    float: left;
+}
+.infoImovel{
+    width: 380px;
+    float: left;
+}
+.infoImovel h1{
+    margin: 0 0 16px 0;
+    font-weight: 600;
+    font-size: 24px;
+    color: #68CD8B;
+}
+.infoImovel p{
+    margin: 2px 22px 13px 0;
+    font-size: 13px;
+    color: #303030;
+    float: left;
+}
+.infoImovel svg{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    float: left;
+}
+.infoImovel h6{
+    margin: 0;
+    font-weight: normal;
+    font-size: 16px;
+    color: #303030;
+    float: left;
+}
+button{
+    outline: none;
+    border: none;
+}
+.btns{
+    width: 220px;
+    height: 60px;
+    float: left;
+}
+#quero{
+    width: 145px;
+    height: 60px;
+    margin: 20px 35px 0 350px;
+    padding-top: 6px;
+    background: #39A55E;
+    border-radius: 16px;
+    float: left;
+}
+#quero:hover{
+    background: linear-gradient(270deg, #68CD8B -11.25%, rgba(104, 205, 139, 0) 107.75%), #39A55E;
+}
+#quero:focus{
+    border: 2px solid #39A55E;
+    background: #fff;
+    color: #39A55E;
+}
+#quero:focus path{
+    fill: #39A55E;
+}
+#lixeira{
+    width: 25px;
+    padding: 35px 0 0 0;
+    margin: 0 0 0 0;
+    background: transparent;
+    float: left;
+}

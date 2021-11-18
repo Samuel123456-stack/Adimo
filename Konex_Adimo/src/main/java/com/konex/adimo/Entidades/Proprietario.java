@@ -18,6 +18,9 @@ public class Proprietario implements Serializable{
 	@Column(name = "idprop")
 	private Integer idProp;
 	
+	@Column(length = 100)
+	private String nome;
+	
 	@Column(length = 14)
 	private String cpf;
 	
@@ -32,8 +35,9 @@ public class Proprietario implements Serializable{
 	
 	public Proprietario() {}
 
-	public Proprietario(Integer idProp, String cpf, String rg, String email, String celular) {
+	public Proprietario(Integer idProp,String nome, String cpf, String rg, String email, String celular) {
 		this.idProp = idProp;
+		this.nome = nome;
 		this.cpf = cpf;
 		this.rg = rg;
 		this.email = email;
@@ -46,6 +50,14 @@ public class Proprietario implements Serializable{
 
 	public void setIdProp(Integer idProp) {
 		this.idProp = idProp;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getCpf() {
