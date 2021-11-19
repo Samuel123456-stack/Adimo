@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -49,11 +50,11 @@ public class Imovel implements Serializable{
 	@Column(columnDefinition = "Decimal(7.2)")
 	private BigDecimal valor;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "fk_imob_imov")
 	private Imobiliaria imobiliaria;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "fk_prop_imov")
 	private Proprietario proprietario;
 	
