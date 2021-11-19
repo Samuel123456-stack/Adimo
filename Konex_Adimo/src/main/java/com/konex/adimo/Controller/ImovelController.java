@@ -1,6 +1,8 @@
 package com.konex.adimo.Controller;
 
 import java.util.HashSet;
+import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,11 +77,15 @@ public class ImovelController {
 		Imovel imovel = new Imovel();
 		Conveniencia conv = new Conveniencia();
 		Proprietario prop = new Proprietario();
+		//Alterar dado depois
+		Integer idProp= 1;
+		List<Imovel> listaAlugado = imoRepo.listaImovelAlu(idProp);
 		
 		model.addAttribute("prop", prop);
 		model.addAttribute("conv", conv);
 		model.addAttribute("imovel", imovel);
 		model.addAttribute("bairros", baiRepo.findAll());
+		model.addAttribute("listaAlugado", listaAlugado );
 		
 		return ("painel");
 		
@@ -97,6 +103,29 @@ public class ImovelController {
 	public String cadastroProp(@ModelAttribute("prop")Proprietario prop,Model model) {
 		propRepo.save(prop);
 		
+		return telaPainel(model);
+	}
+	
+	@GetMapping("/proprietario/pegaId")
+	public String pegaId(@RequestParam("id") Integer id, Model model) {
+		model.addAttribute("id", id);
+		return telaPainel(model);
+	}
+	
+	@GetMapping("/proprietario/trocaValor")
+	public String trocaValor(@ModelAttribute("id") Integer id,@ModelAttribute("imovel") Imovel imo, Model model) {
+        Imovel imovel = imoRepo.findById(id).get();
+        imovel.setValor(imo.getValor());
+        imoRepo.save(imovel);
+		return telaPainel(model);
+		
+	}
+	
+	@GetMapping("/proprietario/consultaCPF")
+	public String consultaCPF(@ModelAttribute("prop") Proprietario prop,Model model) {
+		Random ale = new Random();
+		int restringe = ale.nextInt(10+1);
+		model.addAttribute("restringe", restringe);
 		return telaPainel(model);
 	}
 }
