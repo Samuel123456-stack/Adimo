@@ -31,6 +31,9 @@
     color:#39A55E;
     font-weight: 500;
 }
+#container-landing ul li:nth-child(2) a{
+	color:#303030;
+}
 #container-landing ul li svg{
     margin-right:16px;
 }
