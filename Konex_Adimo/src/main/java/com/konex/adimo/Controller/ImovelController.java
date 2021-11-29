@@ -7,12 +7,13 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -72,7 +73,8 @@ public class ImovelController {
 		return favoritos(model);
 	}
 	
-	@GetMapping("/imovel/telaPainel")
+	@PreAuthorize("hasAnyRole('ADMIN')")
+	@GetMapping("/telaPainel")
 	public String telaPainel(Model model) {
 		Imovel imovel = new Imovel();
 		Conveniencia conv = new Conveniencia();
@@ -87,10 +89,10 @@ public class ImovelController {
 		model.addAttribute("bairros", baiRepo.findAll());
 		model.addAttribute("listaAlugado", listaAlugado );
 		
-		return ("painel");
+		return "painel";
 		
 	}
-	
+
 	@GetMapping("/imovel/cadastro")
 	public String cadastroImo(@ModelAttribute("imovel") Imovel imovel,@ModelAttribute("conv") Conveniencia conv, Model model) {
 		imoRepo.save(imovel);

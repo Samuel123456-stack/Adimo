@@ -40,4 +40,9 @@ public class HomeController {
 			return mv;
 		}
 	}
+	
+	@GetMapping("/entrarpage")
+    public String log() {
+        return "entrar";
+    }
 }
