@@ -64,6 +64,11 @@ body{
     justify-content: flex-start;
     align-items: flex-start;
 }
+#container-landing .inline-block-container .image img{
+    width:600px;
+    height:448px;
+    border-radius:8px;
+}
 #container-landing .inline-block-container .about h4{
     color:#303030;
 }
@@ -72,6 +77,7 @@ body{
     background: rgba(104, 205, 139, 0.14);
     border-radius: 12px;
     padding:47px 20px;
+    width:400px;
 }
 #container-landing .code_customer{
     border-bottom:2px solid rgba(104, 205, 139, 0.21);
@@ -79,6 +85,7 @@ body{
 #container-landing .code_customer p:first-child{
     margin-bottom:19px;
     font-size:18px;
+    display:inline;
 }
 #container-landing .code_customer p:last-child{
     font-size:12px;
