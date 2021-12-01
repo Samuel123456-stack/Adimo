@@ -101,7 +101,7 @@
             <div class="inline-block-container">
                 <section class="image">
                 	<img th:src="${imo.foto}" alt="image">
-                    <!-- <img src="/images/kitchen.png" alt="image" /> -->
+                    
                 </section>
 
                 <article class="about" >
@@ -166,14 +166,26 @@
             </div>
 
             <div class="location">
-                <h3>Sobre a Localização</h3>
+                <h3>Sobre a Lozalização</h3>
                 <p>É uma área residencial, sendo uma das ruas mais recomendadas no bairro do morumbi. 
                     Há diversos comércios na proximidade, o que valoriza área residencial.</p>
 
-                <div class="icons" th:each="conv, stat: ${conveniencias}">
+                <div class="icons">
                     <section class="area">
                         <img src="/images/sport.png" alt="sports" />
-                        <span th:text="${conv.nome}"></span>
+                        <span>Quadras esportivas</span>
+                    </section>
+                    <section class="rooms">
+                        <img src="/images/shopping.png" alt="shop" />
+                        <span>Mercados</span>
+                    </section>
+                    <section class="spot">
+                        <img src="/images/pharmacy.png" alt="pharmacy">
+                        <span>Farmácias</span>
+                    </section>
+                    <section class="address">
+                        <img src="/images/bycicle.png" alt="bycicle" />
+                        <span>Ciclovias</span>
                     </section>
                 </div>
             </div>
