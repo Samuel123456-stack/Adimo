@@ -59,21 +59,22 @@ CREATE TABLE imobiliaria (
     fk_bai_imob integer null,
 	FOREIGN KEY (fk_bai_imob) REFERENCES bairro (idbai)
 );
-CREATE TABLE role(
+
+/*CREATE TABLE role(
 	role_id Integer AUTO_INCREMENT PRIMARY KEY,
 	role varchar(100)
-);
+);*/
 
 CREATE TABLE funcionario (
     idfunc Integer AUTO_INCREMENT PRIMARY KEY,
     username varchar(30) null,
     senha varchar(8) null,
     nome varchar(30) null,
-    fk_role Integer null,
-    FOREIGN KEY (fk_role) REFERENCES role (role_id)
+    /*fk_role Integer null,
+    FOREIGN KEY (fk_role) REFERENCES role (role_id)*/
 );
 
-insert into funcionario(username, password, nome) value('gabriel@adimo.com', '$2a$10$EiFH/GaZB1fTOMhdNYVtbO6fm4aSZYxl88UcP2bZF7kGpiNV7.sTO', 'Gabriel');
+insert into funcionario(username, senha, nome) value('gabriel@adimo.com', '123456', 'Gabriel'), ('adm@adimo.com', '123456', 'Gabriel');
 
 CREATE TABLE conveniencia (
     idconv Integer AUTO_INCREMENT PRIMARY KEY,
