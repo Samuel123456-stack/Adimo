@@ -27,11 +27,6 @@ public class User implements Serializable{
 	private String password;
 	private String nome;
 
-	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinTable( name = "user_role", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "username"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "role")) 
-	private Set<Role> roles;
-	
 	public int getUser_id() {
 		return user_id;
 	}
@@ -71,16 +66,5 @@ public class User implements Serializable{
 		this.nome = nome;
 	}
 
-
-	public Set<Role> getRoles() {
-		return roles;
-	}
-
-
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}
-
-	//getters e settres
 	
 }
